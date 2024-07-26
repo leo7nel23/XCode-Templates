@@ -1,4 +1,4 @@
-XCODE_USER_TEMPLATES_DIR=~/Library/Developer/Xcode/Templates/File\ Templates
+XCODE_USER_TEMPLATES_DIR=~/Library/Developer/Xcode/Templates
 
 TEMPLATES_DIR=Architecture
 

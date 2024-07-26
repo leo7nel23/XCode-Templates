@@ -6,9 +6,7 @@ import UIKit
 import Combine
 import HaoYongVVM
 
-typealias ___VARIABLE_controllerName___ = HHYViewController<___VARIABLE_viewName___>
-
-final class ___VARIABLE_viewName___: DefaultHHYView<___VARIABLE_viewName___Model> {
+final class ___VARIABLE_viewName___: DefaultHYView<___VARIABLE_viewName___Model> {
 
     private var observation: VM.ViewObservation { viewModel.viewObservation }
 
