@@ -2,14 +2,13 @@
 //  ___FILEHEADER___
 //
 
-import UIKit
 import Combine
 import HaoYongVVM
 import SnapKit
 import SwiftUI
+import UIKit
 
 final class ___VARIABLE_viewName___: DefaultHYView<___VARIABLE_viewName___Model> {
-
     private var observation: VM.ViewObservation { viewModel.viewObservation }
 
     private lazy var swiftUIHostController: UIHostingController = {
@@ -29,20 +28,18 @@ final class ___VARIABLE_viewName___: DefaultHYView<___VARIABLE_viewName___Model>
     }
 }
 
-fileprivate struct SwiftUI___VARIABLE_viewName___: View {
-
+private struct SwiftUI___VARIABLE_viewName___: View {
     let viewModel: ___VARIABLE_viewName___Model
     @State var observation: ___VARIABLE_viewName___Model.ViewObservation
 
     init(viewModel: ___VARIABLE_viewName___Model) {
         self.viewModel = viewModel
-        self.observation = viewModel.viewObservation
+        observation = viewModel.viewObservation
     }
 
     var body: some View {
         
     }
-
 }
 
 #Preview {

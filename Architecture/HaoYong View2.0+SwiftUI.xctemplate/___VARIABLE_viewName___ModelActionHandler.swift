@@ -2,19 +2,16 @@
 //  ___FILEHEADER___
 //
 
-import Foundation
 import Combine
+import Foundation
 
 extension ___VARIABLE_viewName___Model {
     final class Properties: HaoYongProperties {
         typealias ViewModel = ___VARIABLE_viewName___Model
-
-
     }
 }
 
 enum ___VARIABLE_viewName___ModelActionHandler: HaoYongViewModelActionHandler {
-
     typealias ViewModel = ___VARIABLE_viewName___Model
 
     enum Action {
@@ -22,7 +19,6 @@ enum ___VARIABLE_viewName___ModelActionHandler: HaoYongViewModelActionHandler {
         case manipulation(ViewModel.Manipulation)
     }
 
-    
     static func handle(action: Action, with properties: Properties) {
         switch action {
         case let .viewAction(viewAction):
@@ -34,7 +30,7 @@ enum ___VARIABLE_viewName___ModelActionHandler: HaoYongViewModelActionHandler {
 
     private static func handle(viewAction: ViewModel.ViewAction, with properties: Properties) {
         switch viewAction {
-
+            
         }
     }
 

@@ -2,9 +2,9 @@
 //  ___FILEHEADER___
 //
 
+import Combine
 import Foundation
 import HaoYongVVM
-import Combine
 import SwiftUI
 
 final class ___VARIABLE_viewName___Model: HaoYongActionDelegatableViewModel {
@@ -23,7 +23,7 @@ final class ___VARIABLE_viewName___Model: HaoYongActionDelegatableViewModel {
     }
 
     private func setUpSubscriptions() {
-        
+
     }
 }
 
@@ -43,7 +43,6 @@ extension ___VARIABLE_viewName___Model: HaoYongManipulatee {
     }
 }
 
-
 extension ___VARIABLE_viewName___Model {
     @Observable
     final class ViewObservation {
@@ -57,7 +56,7 @@ extension ___VARIABLE_viewName___Model {
 
 extension ___VARIABLE_viewName___Model: HaoYongViewActionReceiver {
     enum ViewAction {
-
+        
     }
 
     func handle(viewAction: ViewAction) {

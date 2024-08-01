@@ -2,9 +2,9 @@
 //  ___FILEHEADER___
 //
 
+import Combine
 import Foundation
 import HaoYongVVM
-import Combine
 
 final class ___VARIABLE_viewName___Model: HaoHaoYongActionDelegatableViewModel {
     typealias ActionHandler = ___VARIABLE_viewName___ModelActionHandler
@@ -13,7 +13,7 @@ final class ___VARIABLE_viewName___Model: HaoHaoYongActionDelegatableViewModel {
 
     private(set) lazy var viewObservation = makeViewObservation()
 
-    private var subscriptions = Set<AnyCancellable>()
+    var subscriptions = Set<AnyCancellable>()
 
     init() {
         properties = Properties()
@@ -22,7 +22,7 @@ final class ___VARIABLE_viewName___Model: HaoHaoYongActionDelegatableViewModel {
     }
 
     private func setUpSubscriptions() {
-        
+
     }
 }
 
@@ -33,15 +33,12 @@ extension ___VARIABLE_viewName___Model: HaoYongEventPublisher {
 }
 
 extension ___VARIABLE_viewName___Model: HaoYongManipulatee {
-    enum Manipulation {
-
-    }
+    enum Manipulation {}
 
     func manipulate(_ manipulation: Manipulation) {
         handle(.manipulation(manipulation))
     }
 }
-
 
 extension ___VARIABLE_viewName___Model {
     final class ViewObservation {
@@ -55,7 +52,7 @@ extension ___VARIABLE_viewName___Model {
 
 extension ___VARIABLE_viewName___Model: HaoYongViewActionReceiver {
     enum ViewAction {
-
+        
     }
 
     func handle(viewAction: ViewAction) {
