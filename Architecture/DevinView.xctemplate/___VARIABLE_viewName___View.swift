@@ -5,23 +5,13 @@
 import DLVVM
 
 struct ___VARIABLE_viewName___View: DLView {
+    @State var viewModel: ___VARIABLE_viewName___ViewModel
 
-  typealias ViewModel = ___VARIABLE_viewName___ViewModel
-
-  @State var observation: ViewModel.ViewObservation
-
-  let viewModel: ViewModel
-
-  init(viewModel: ViewModel) {
-    self.viewModel = viewModel
-    observation = viewModel.observation
-  }
-
-  var body: some View {
-    Text("Hello")
-  }
+    var body: some View {
+        Text("Hello")
+    }
 }
 
 #Preview {
-  ___VARIABLE_viewName___View(viewModel: .init())
+    ___VARIABLE_viewName___View(viewModel: .init(initialState: .init()))
 }

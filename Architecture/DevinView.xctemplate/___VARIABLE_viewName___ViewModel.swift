@@ -6,67 +6,48 @@ import DLVVM
 
 // MARK: - ___VARIABLE_viewName___ViewModel
 
-class ___VARIABLE_viewName___ViewModel: DLViewModel {
+@Observable
+final class ___VARIABLE_viewName___ViewModel: DLReducibleViewModel {
+    typealias Reducer = ___VARIABLE_viewName___Feature
 
-  typealias Reducer = ___VARIABLE_viewName___Reducer
+    var state: State
 
-  private let eventSubject = PassthroughSubject<Event, Never>()
-  var eventPublisher: AnyPublisher<Event, Never> { eventSubject.eraseToAnyPublisher() }
-  
-  lazy var observation: ViewObservation = makeViewObservation()
+    var coordinator: DLCoordinatorViewModel?
 
-  let properties: ModelProperties
+    var subscriptions = Set<AnyCancellable>()
 
-  private var subscriptions = Set<AnyCancellable>()
+    init(initialState: State) {
+        state = initialState
+        setUpSubscriptions()
+    }
 
-  init() {
-    properties = ModelProperties()
-    setUpSubscriptions()
-  }
-
-  private func setUpSubscriptions() {
-    properties.actionPublisher
-      .sink { [weak self] action in
-        guard let self = self else { return }
-        switch action {
-
-        }
-      }
-      .store(in: &subscriptions)
-  }
+    private func setUpSubscriptions() {
+        state.actionPublisher
+            .sink { [weak self] action in
+                guard let self = self else { return }
+                switch action {
+                }
+            }
+            .store(in: &subscriptions)
+    }
 }
 
-// MARK: ___VARIABLE_viewName___ViewModel.Event
-
-extension ___VARIABLE_viewName___ViewModel {
-  enum Event {
-
-  }
+extension ___VARIABLE_viewName___ViewModel: DLEventPublisher {
+    enum Event {}
 }
 
-extension ___VARIABLE_viewName___ViewModel {
-  enum Manipulation {
+extension ___VARIABLE_viewName___ViewModel: DLManipulation {
+    enum Manipulation {}
 
-  }
-
-  func manipulate(_ manipulation: Manipulation) {
-    Reducer.reduce(.manipulation(manipulation), with: properties)
-  }
+    func manipulate(_ manipulation: Manipulation) {
+        Reducer.reduce(state: state, with: manipulation)
+    }
 }
 
-extension ___VARIABLE_viewName___ViewModel {
-  @Observable
-  class ViewObservation {}
+extension ___VARIABLE_viewName___ViewModel: DLViewAction {
+    enum ViewAction {}
 
-  private func makeViewObservation() -> ViewObservation {
-    ViewObservation()
-  }
-}
-
-extension ___VARIABLE_viewName___ViewModel {
-  enum ViewAction {}
-
-  func handle(_ viewAction: ViewAction) {
-    Reducer.reduce(.viewAction(viewAction), with: properties)
-  }
+    func reduce(_ viewAction: ViewAction) {
+        Reducer.reduce(state: state, with: viewAction)
+    }
 }
